@@ -8,12 +8,12 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Component
-import util.lazyLogger
+import ru.otus.gateway.util.lazyLogger
 
 @Component
 class RegistrationClient(
     private val httpClient: HttpClient,
-    @Value("\${service.auth.url}")
+    @Value("\${service.auth}")
     private val baseUrl: String
 ) {
 

@@ -1,4 +1,4 @@
-package util
+package ru.otus.gateway.util
 
 import org.slf4j.LoggerFactory.getLogger
 
