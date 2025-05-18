@@ -13,7 +13,7 @@ import ru.otus.gateway.util.lazyLogger
 @Component
 class RegistrationClient(
     private val httpClient: HttpClient,
-    @Value("\${service.auth}")
+    @Value("\${services.auth}")
     private val baseUrl: String
 ) {
 

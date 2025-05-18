@@ -20,7 +20,7 @@ class RedirectController(
     ): ResponseEntity<Any> {
         logger.info("Smart-link request received: $uri")
         return runBlocking {
-            redirectClient.getLink(uri = uri, args = mapOf("headers" to headers))
+            redirectClient.getLink(uri = uri, args = headers)
         }
     }
 

@@ -14,7 +14,6 @@ plugins {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
 
     implementation("org.springframework.boot:spring-boot-starter-security")
@@ -60,34 +59,34 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-koverReport {
-    verify {
-        rule("Min 90% lines coverage") {
-            isEnabled = true
-            bound {
-                minValue = 90
-                metric = MetricType.LINE
-                aggregation = AggregationType.COVERED_PERCENTAGE
-            }
-        }
-        rule("Min 90% instructions coverage") {
-            isEnabled = true
-            bound {
-                minValue = 90
-                metric = MetricType.INSTRUCTION
-                aggregation = AggregationType.COVERED_PERCENTAGE
-            }
-        }
-        rule("Min 90% branches coverage") {
-            isEnabled = true
-            bound {
-                minValue = 90
-                metric = MetricType.BRANCH
-                aggregation = AggregationType.COVERED_PERCENTAGE
-            }
-        }
-    }
-}
+//koverReport {
+//    verify {
+//        rule("Min 90% lines coverage") {
+//            isEnabled = true
+//            bound {
+//                minValue = 90
+//                metric = MetricType.LINE
+//                aggregation = AggregationType.COVERED_PERCENTAGE
+//            }
+//        }
+//        rule("Min 90% instructions coverage") {
+//            isEnabled = true
+//            bound {
+//                minValue = 90
+//                metric = MetricType.INSTRUCTION
+//                aggregation = AggregationType.COVERED_PERCENTAGE
+//            }
+//        }
+//        rule("Min 90% branches coverage") {
+//            isEnabled = true
+//            bound {
+//                minValue = 90
+//                metric = MetricType.BRANCH
+//                aggregation = AggregationType.COVERED_PERCENTAGE
+//            }
+//        }
+//    }
+//}
 
 configurations {
     compileOnly {

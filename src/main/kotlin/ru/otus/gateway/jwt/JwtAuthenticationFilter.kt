@@ -1,4 +1,4 @@
-package spring.jwt
+package ru.otus.gateway.jwt
 
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest

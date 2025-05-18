@@ -1,4 +1,4 @@
-package spring.jwt
+package ru.otus.gateway.jwt
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
