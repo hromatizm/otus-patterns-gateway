@@ -3,12 +3,10 @@ package ru.otus.gateway.rule.delete
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
-import io.ktor.http.*
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Component
-import ru.otus.gateway.rule.RulePackDto
 import ru.otus.gateway.util.lazyLogger
 
 @Component

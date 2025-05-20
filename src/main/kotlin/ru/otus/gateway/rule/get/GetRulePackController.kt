@@ -3,7 +3,6 @@ package ru.otus.gateway.rule.get
 import kotlinx.coroutines.runBlocking
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import ru.otus.gateway.rule.RulePackDto
 import ru.otus.gateway.util.lazyLogger
 
 @RestController
