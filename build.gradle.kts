@@ -7,6 +7,7 @@ version = "1.0-SNAPSHOT"
 plugins {
     kotlin("jvm") version "2.1.20"
     kotlin("plugin.spring") version "2.1.20"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.20"
     id("org.springframework.boot") version "3.4.4"
     id("io.spring.dependency-management") version "1.1.7"
     id("org.jetbrains.kotlinx.kover") version "0.7.6"
@@ -27,15 +28,21 @@ dependencies {
     implementation("io.ktor:ktor-serialization-jackson:2.3.7")
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.security:spring-security-test")
     testImplementation("org.assertj:assertj-core:3.27.3")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.10.0")
     testImplementation("org.mockito:mockito-core")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.2.1")
+    testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("com.ninja-squad:springmockk:4.0.2")
     testImplementation("io.ktor:ktor-client-mock:2.3.7")
+    testImplementation("io.ktor:ktor-client-content-negotiation:2.3.7")
+    testImplementation("io.ktor:ktor-serialization-kotlinx-json:2.3.7")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
 }
 
 repositories {
@@ -59,34 +66,18 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
-//koverReport {
-//    verify {
-//        rule("Min 90% lines coverage") {
-//            isEnabled = true
-//            bound {
-//                minValue = 90
-//                metric = MetricType.LINE
-//                aggregation = AggregationType.COVERED_PERCENTAGE
-//            }
-//        }
-//        rule("Min 90% instructions coverage") {
-//            isEnabled = true
-//            bound {
-//                minValue = 90
-//                metric = MetricType.INSTRUCTION
-//                aggregation = AggregationType.COVERED_PERCENTAGE
-//            }
-//        }
-//        rule("Min 90% branches coverage") {
-//            isEnabled = true
-//            bound {
-//                minValue = 90
-//                metric = MetricType.BRANCH
-//                aggregation = AggregationType.COVERED_PERCENTAGE
-//            }
-//        }
-//    }
-//}
+koverReport {
+    verify {
+        rule("Min 90% lines coverage") {
+            isEnabled = true
+            bound {
+                minValue = 90
+                metric = MetricType.LINE
+                aggregation = AggregationType.COVERED_PERCENTAGE
+            }
+        }
+    }
+}
 
 configurations {
     compileOnly {
